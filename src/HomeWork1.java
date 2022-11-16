@@ -1,5 +1,5 @@
 import java.sql.SQLOutput;
-
+import java.util.Random;
 
 public class HomeWork1 {
     public static void main(String[] args){
@@ -23,10 +23,10 @@ public class HomeWork1 {
         // Задание №3:
         // Дано:
         boolean hasFuel = true;
-        boolean hasElectricsProblem = true;
+        boolean hasElectricsProblem = false;
         boolean hasMotorProblem = true;
-        boolean hasTransmissionProblem = true;
-        boolean hasWheelsProblem = true;
+        boolean hasTransmissionProblem = false;
+        boolean hasWheelsProblem = false;
         // В автосервис приехала сломанная машина. Механики находят неисправность следующим способом:
         // Если у машины нет бензина и ничего не сломано, то отдают машину владельцу и берут 1000 рублей за консультацию.
         // Если у машины проблема с двигателем, то чинят и берут 10 000.
@@ -41,7 +41,13 @@ public class HomeWork1 {
 
         int popados = 0;
         if(hasFuel  == false && hasElectricsProblem == false && hasMotorProblem  == false && hasTransmissionProblem == false && hasWheelsProblem == false) {
-            System.out.println("Да быть такого не может! Может хоть масло поменяем?");
+            System.out.println("Да быть такого не может! Сейчас что-нибудь найдем");
+             Random random = new Random();
+             hasFuel = random.nextBoolean();
+            hasElectricsProblem = random.nextBoolean();
+            hasMotorProblem =random.nextBoolean();
+            hasTransmissionProblem = random.nextBoolean();
+            hasWheelsProblem = random.nextBoolean();
         }
 
             if (hasElectricsProblem) {
