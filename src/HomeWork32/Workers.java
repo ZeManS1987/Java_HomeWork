@@ -1,11 +1,14 @@
 package HomeWork32;
 
 public class Workers {
-    int spoiledVodka = 0;
-    String name;
+    private int spoiledVodka = 0;
 
-    public Workers(String name) {
-        this.name = name;
+    public Workers(){
+
+    }
+
+    public Workers(int spoiledVodka) {
+        this.spoiledVodka = spoiledVodka;
     }
 
     public int getSpoiledVodka() {
@@ -15,18 +18,13 @@ public class Workers {
     public void setSpoiledVodka(int spoiledVodka) {
         this.spoiledVodka = spoiledVodka;
     }
-
-    public String getName() {
-        return name;
+    public void takeVodka(Stock stock) {
+        stock.takeProduct();
+        System.out.println("Ура я испортил водку!");
+        spoiledVodka++;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Workers(String name, int spoiledVodka) {
-        this.name = name;
-        this.spoiledVodka = spoiledVodka;
-
+    public void printJournal() {
+        System.out.println(spoiledVodka);
     }
 }
